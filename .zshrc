@@ -1,5 +1,5 @@
 # Setup Path for environment to include powerline bin
-export PATH="~/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -51,9 +51,9 @@ fi
 
 # Setup web proxy if required uncomment these lines and replace the URL's
 # URL's can be  {protocol}://user:password@proxyIP:proxyPort/ if required.
-# export http_proxy=http://localhost:8877/
-# export https_proxy=https://localhost:8877/
-# export ftp_proxy=$http_proxy
-# export rsync_proxy=$http_proxy
+export http_proxy=http://localhost:8877/
+export https_proxy=https://localhost:8877/
+export ftp_proxy=$http_proxy
+export rsync_proxy=$http_proxy
 # export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 

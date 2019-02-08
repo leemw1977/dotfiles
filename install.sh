@@ -78,6 +78,10 @@ main() {
 #   " ~/.zshrc > ~/.zshrc-omztemp
 #   mv -f ~/.zshrc-omztemp ~/.zshrc
 
+# Add script here to create links
+# TODO
+# obviously if these files exist take backups
+# eg ln -s ./installdir/.vimrc .vimrc
   # If this user's login shell is not already "zsh", attempt to switch.
   TEST_CURRENT_SHELL=$(basename "$SHELL")
   if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
