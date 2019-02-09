@@ -1,3 +1,4 @@
+#!/bin/bash
 main() {
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
@@ -71,8 +72,24 @@ main() {
     mv ~/.zshrc ~/.zshrc.pre-leemw-dot-files;
   fi
 
-  printf "${BLUE}Using the leemw1977's dot files: creating relevant symlinks${NORMAL}\n"
-#   cp "$INSTALLDIR"/templates/zshrc.zsh-template ~/.zshrc
+ 
+  printf "${BLUE}Looking for an existing tmux config...${NORMAL}\n"
+  if [ -f ~/.tmux.conf ] || [ -h ~/.tmux.conf ]; then
+    printf "${YELLOW}Found ~/.tmux.conf.${NORMAL} ${GREEN}Backing up to ~/.tmux.conf.pre-leemw-dot-files${NORMAL}\n";
+    mv ~/.tmux.conf ~/.tmux.conf.pre-leemw-dot-files;
+  fi
+
+  printf "${BLUE}Looking for an existing vimrc config...${NORMAL}\n"
+  if [ -f ~/.vimrc ] || [ -h ~/.vimrc ]; then
+    printf "${YELLOW}Found ~/.vimrc.${NORMAL} ${GREEN}Backing up to ~/.vimrc.pre-leemw-dot-files${NORMAL}\n";
+    mv ~/.vimrc ~/.vimrc.pre-leemw-dot-files;
+  fi
+  
+  printf "${BLUE}Using the leemw1977's dot files: creating relevant files from templates${NORMAL}\n"
+  cp "$INSTALLDIR"/templates/zshrc.template ~/.zshrc
+  cp "$INSTALLDIR"/templates/tmux.conf.template ~/.tmux.conf
+  cp "$INSTALLDIR"/templates/vimrc.template ~/.vimrc
+
 #   sed "/^export ZSH=/ c\\
 #   export ZSH=\"$INSTALLDIR\"
 #   " ~/.zshrc > ~/.zshrc-omztemp
@@ -82,6 +99,8 @@ main() {
 # TODO
 # obviously if these files exist take backups
 # eg ln -s ./installdir/.vimrc .vimrc
+  
+
   # If this user's login shell is not already "zsh", attempt to switch.
   TEST_CURRENT_SHELL=$(basename "$SHELL")
   if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
@@ -105,8 +124,9 @@ main() {
   echo ' / /  __/  __/ / / / / / |/ |/ / /\__, /  / /  / /  (__  )  / /_/ / /_/ / /_   / __/ / /  __(__  )  '
   echo '/_/\___/\___/_/ /_/ /_/|__/|__/_//____/  /_/  /_/  /____/   \__,_/\____/\__/  /_/ /_/_/\___/____/   '
   echo ''
-  echo ''
   echo 'Please look over the ~/.zshrc, ~/.tmux.conf, and ~/.vimrc files.'
+  echo 'Any existing files are backed up in your home drive. Tagged with .pre-leemw-dot-files'
+  echo ''
   echo ''
   printf "${NORMAL}"
   env zsh -l
