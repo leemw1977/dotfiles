@@ -71,11 +71,6 @@ main() {
     mv ~/.zshrc ~/.zshrc.pre-leemw-dot-files;
  
 
-    # If we're on WSL reset the SHELL variable as it will always be bash
-    if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
-        # Reset shell
-        printf "${YELLOW}Found we are running on WSL/Microsoft.${NORMAL} ${GREEN}Adding a line that will setup the ${NORMAL}\n"
-    fi
   fi
 
  
@@ -93,6 +88,14 @@ main() {
   
   printf "${BLUE}Using the leemw1977's dot files: creating relevant files from templates${NORMAL}\n"
   cp "$INSTALLDIR"/templates/zshrc.template ~/.zshrc
+  # If we're on WSL reset the SHELL variable as it will always be bash
+  if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    # Reset shell
+    printf "${YELLOW}Found we are running on WSL/Microsoft.${NORMAL} ${GREEN}Adding a line that will setup the shell variable to point to zsh as it should be after install.${NORMAL}\n"
+    sed 's/# SHELL=\/dev\/null/\SHELL=\/bin\/zsh/' ~/.zshrc > ~/.zshrc-ldftemp
+    mv -f ~/.zshrc-omztemp ~/.zshrc
+  fi
+
   cp "$INSTALLDIR"/templates/tmux.conf.template ~/.tmux.conf
   cp "$INSTALLDIR"/templates/vimrc.template ~/.vimrc
 
