@@ -1,4 +1,3 @@
-#!/bin/bash
 main() {
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
@@ -70,6 +69,13 @@ main() {
   if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
     printf "${YELLOW}Found ~/.zshrc.${NORMAL} ${GREEN}Backing up to ~/.zshrc.pre-leemw-dot-files${NORMAL}\n";
     mv ~/.zshrc ~/.zshrc.pre-leemw-dot-files;
+ 
+
+    # If we're on WSL reset the SHELL variable as it will always be bash
+    if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+        # Reset shell
+        printf "${YELLOW}Found we are running on WSL/Microsoft.${NORMAL} ${GREEN}Adding a line that will setup the ${NORMAL}\n"
+    fi
   fi
 
  
@@ -90,15 +96,6 @@ main() {
   cp "$INSTALLDIR"/templates/tmux.conf.template ~/.tmux.conf
   cp "$INSTALLDIR"/templates/vimrc.template ~/.vimrc
 
-#   sed "/^export ZSH=/ c\\
-#   export ZSH=\"$INSTALLDIR\"
-#   " ~/.zshrc > ~/.zshrc-omztemp
-#   mv -f ~/.zshrc-omztemp ~/.zshrc
-
-# Add script here to create links
-# TODO
-# obviously if these files exist take backups
-# eg ln -s ./installdir/.vimrc .vimrc
   
 
   # If this user's login shell is not already "zsh", attempt to switch.
