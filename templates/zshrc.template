@@ -1,3 +1,5 @@
+# Reset SHELL environment - this will be automatically uncommented and set if it is required
+# SHELL=
 # Setup Path for environment to include powerline bin
 export PATH="$HOME/.local/bin:$PATH"
 
