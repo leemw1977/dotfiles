@@ -93,7 +93,7 @@ main() {
     # Reset shell
     printf "${YELLOW}Found we are running on WSL/Microsoft.${NORMAL} ${GREEN}Adding a line that will setup the shell variable to point to zsh as it should be after install.${NORMAL}\n"
     sed 's/# SHELL=\/dev\/null/\SHELL=\/bin\/zsh/' ~/.zshrc > ~/.zshrc-ldftemp
-    mv -f ~/.zshrc-omztemp ~/.zshrc
+    mv -f ~/.zshrc-ldftemp ~/.zshrc
   fi
 
   cp "$INSTALLDIR"/templates/tmux.conf.template ~/.tmux.conf
