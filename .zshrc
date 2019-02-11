@@ -57,3 +57,11 @@ export ftp_proxy=$http_proxy
 export rsync_proxy=$http_proxy
 # export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 
+# Setup Powerline for zsh - if it's really required?
+# PowerLevel9k
+#source  ~/powerlevel9k/powerlevel9k.zsh-theme
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history date time)
+#POWERLEVEL9K_DATE_FORMAT=%D{%d/%m/%Y}
+powerline-daemon --quiet
+. ~/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh

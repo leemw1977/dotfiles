@@ -22,3 +22,9 @@ sudo apt install vim
 ```
 Should I need to downgrade this should do the trick:
 `sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/vim`
+
+# Broken down installation
+`pip install powerline-status`
+make sure `powerline-config`/`powerline` are available (i.e. the path they are installed is in your `$PATH`)
+
+pip install powerline-gitstatus
