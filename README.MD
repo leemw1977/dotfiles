@@ -14,7 +14,7 @@ powerline9k
 * `alteredbeast.psm1` is a theme for oh-my-posh based on the brilliant agnoster theme - I've added the date/time here
 * `Microsoft.PowerShell_profile.ps1` is my PS profile, contents of which is symlinked to where `$PROFILE` points or `$PROFILE` is amended to point at this file.
 
-# I should install the latest vim
+### I should install the latest vim
 ```shell
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update
@@ -23,8 +23,27 @@ sudo apt install vim
 Should I need to downgrade this should do the trick:
 `sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/vim`
 
-# Broken down installation
+### Broken down installation
 `pip install powerline-status`
 make sure `powerline-config`/`powerline` are available (i.e. the path they are installed is in your `$PATH`)
 
 pip install powerline-gitstatus
+
+
+
+
+### Basic Installation
+
+Oh My Zsh is installed by running one of the following commands in your terminal. You can install this via the command-line with either `curl` or `wget`.
+
+#### via curl
+
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/leemw1977/dotfiles/master/install.sh)"
+```
+
+#### via wget
+
+```shell
+sh -c "$(wget https://raw.githubusercontent.com/leemw1977/dotfiles/master/install.sh -O -)"
+```
