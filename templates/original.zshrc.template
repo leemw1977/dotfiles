@@ -1,3 +1,5 @@
+# Reset SHELL environment - this will be automatically uncommented and set if it is required
+# SHELL=
 # Setup Path for environment to include powerline bin
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -21,18 +23,13 @@ promptinit
 prompt walters
 
 # Aliases
-alias go="cd /mnt/c/git"
-alias hp="cd /mnt/c/git/tcb.hubportal"
-alias hs="cd /mnt/c/git/tcb.hubservice"
 alias tmux="tmux -2"
-
-
-# some more ls aliases
 alias ll='ls -alF'
 alias lsa="ls -la"
 alias la='ls -A'
 alias l='ls -CF'
 
+# Add any aliases you need here
 
 
 # n for node version management
@@ -51,10 +48,10 @@ fi
 
 # Setup web proxy if required uncomment these lines and replace the URL's
 # URL's can be  {protocol}://user:password@proxyIP:proxyPort/ if required.
-export http_proxy=http://localhost:8877/
-export https_proxy=https://localhost:8877/
-export ftp_proxy=$http_proxy
-export rsync_proxy=$http_proxy
+# export http_proxy=http://localhost:8877/
+# export https_proxy=https://localhost:8877/
+# export ftp_proxy=$http_proxy
+# export rsync_proxy=$http_proxy
 # export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 
 # Setup Powerline for zsh - if it's really required?
