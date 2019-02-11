@@ -27,14 +27,16 @@ Should I need to downgrade this should do the trick:
 `pip install powerline-status`
 make sure `powerline-config`/`powerline` are available (i.e. the path they are installed is in your `$PATH`)
 
-pip install powerline-gitstatus
+`pip install powerline-gitstatus`
 
 
 
 
 ### Basic Installation
 
-Oh My Zsh is installed by running one of the following commands in your terminal. You can install this via the command-line with either `curl` or `wget`.
+These dot files can be installed by running one of the following commands in your terminal. You can install this via the command-line with either `curl` or `wget`.
+
+**N.B. you will need the powerline-status / powerline-git-status to get the best**
 
 #### via curl
 
