@@ -53,3 +53,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/leemw1977/dotfiles/master/
 ```shell
 sh -c "$(wget https://raw.githubusercontent.com/leemw1977/dotfiles/master/install.sh -O -)"
 ```
+## Opportunities to shine:
+Just a list of where I'd like to take this to make setting up a new dev machine easier for myself:
+
+* Currently You'll have to amend the line in `.tmux.conf` that is `source /home/leewilliams/.local ... etc.` for some reason the `$HOME` variable doesn't want to work here, it may just be it needs brackets to "expand" it etc.
+* Add this all into a choco package or [Boxstarter](https://boxstarter.org/) setup with various software and features we always install e.g. vs code
