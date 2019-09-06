@@ -3,7 +3,7 @@ Here are my zshrc and ps profile
 
 I use posh-git & oh-my-posh
 
-~I'm still currenty having issues with SSH on a few of my accessing devices - I hope to solve this problem in the coming weeks.~ This was - as suspected - me being a bit daft.  I'd create the keys under ssh - which was running on windows - and then trying to use them in WSL - a different ssh exe so it was confusing the hell out it.
+I did have issues with SSH on a few of my devices, but it turned out that this was - as suspected - me being a bit daft.  I'd created the keys under ssh - which was running on windows - and then trying to use them in WSL - a different ssh exe so it was confusing the hell out it - they use different file formats.
 
 * `.zshrc` is my zsh profile - it's been a journey through some great projects
 * `.powerline-template` is a `.zshrc` profile - standing on the shoulders of the great 
