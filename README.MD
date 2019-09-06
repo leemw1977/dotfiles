@@ -14,14 +14,18 @@ powerline9k
 * `alteredbeast.psm1` is a theme for oh-my-posh based on the brilliant agnoster theme - I've added the date/time here
 * `Microsoft.PowerShell_profile.ps1` is my PS profile, contents of which is symlinked to where `$PROFILE` points or `$PROFILE` is amended to point at this file.
 
-### I should install the latest vim
+### I should install the latest vim and git
 ```shell
 sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update
-sudo apt install vim
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update && sudo apt install vim git -y
 ```
+
 Should I need to downgrade this should do the trick:
-`sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/vim`
+```shell
+sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/vim
+sudo apt install ppa-purge && sudo ppa-purge ppa:git-core/ppa
+```
 
 ### Broken down installation
 `pip install powerline-status`
