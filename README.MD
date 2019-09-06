@@ -1,9 +1,12 @@
 # My personal dot files
 Here are my zshrc and ps profile
 
-I use posh-git & oh-my-posh
+I use posh-git & oh-my-posh on windows, and I've setup powerline on wsl on windows now and use that.
 
 I did have issues with SSH on a few of my devices, but it turned out that this was - as suspected - me being a bit daft.  I'd created the keys under ssh - which was running on windows - and then trying to use them in WSL - a different ssh exe so it was confusing the hell out it - they use different file formats.
+
+## Solution
+I decided to use PuTTY and PAgent (Plink) to generate ssh keys on windows, then I have to copy those into the WSL install currently, and then make sure permissions are correct for private key etc.
 
 * `.zshrc` is my zsh profile - it's been a journey through some great projects
 * `.powerline-template` is a `.zshrc` profile - standing on the shoulders of the great 
