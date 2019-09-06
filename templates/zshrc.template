@@ -1,4 +1,4 @@
-# Set up the prompt
+# Set up the default promptinit prompt
 autoload -Uz promptinit
 promptinit
 prompt walters
@@ -58,6 +58,9 @@ alias l='ls -CF'
 
 # n for node version management
 #export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# Add powerline source
+. $HOME/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # TMUX
 if which tmux >/dev/null 2>&1; then
