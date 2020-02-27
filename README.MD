@@ -1,3 +1,23 @@
+# Using Choco Installer and box starter
+
+For a Windows machine:
+
+## Step 1 - Install choco:
+
+Run the following command in an elevated powershell
+
+`Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
+
+## Step 2 - Install BoxStarter
+In the elevated powershell window run this install:
+
+`choco install boxstarter -y`
+
+## Step 3 - Install the Hack and Cascadia fonts
+Look in the directories on this repo - there may be updates to these fonts so you can always get the latest version from the [Cascadia Code GitHub Repo](https://github.com/microsoft/cascadia-code/releases) and for the `Hack` font which can be found in the [Powerline GitHub Repo](https://github.com/powerline/fonts/tree/master/Hack)
+
+# OLDIES BUT GOODIES:
+
 # My personal dot files
 Here are my zshrc and ps profile
 
@@ -21,7 +41,7 @@ powerline9k
 ```shell
 sudo add-apt-repository ppa:jonathonf/vim
 sudo add-apt-repository ppa:git-core/ppa
-sudo apt update && sudo apt install vim git -y
+sudo apt update && sudo apt install vim git python3 python3-pip -y
 ```
 
 Should I need to downgrade this should do the trick:

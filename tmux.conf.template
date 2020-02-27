@@ -1,0 +1,31 @@
+set -g default-command "/bin/zsh"
+set -g default-terminal "screen-256color"
+
+run-shell "powerline-daemon -q"
+
+source "/home/lee/.local/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf"
+
+# rebind shortcut for tmux to Ctrl+a as vim uses ctrl+b
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
+# Sensible keys for split window
+bind-key v split-window -h
+bind-key h split-window
+
+# Start Numbering at 1
+set -g base-index 1
+
+# Allow for faster key reps
+set -s escape-time 0
+
+# Sensible new windows
+
+# Rather than constraining window size to the maximum size of any client
+# connected to the *session*, constrain window size to the maximum size of any
+# client connected to *that window*. Much more reasonable.
+setw -g aggressive-resize on
+
+# reload config
+bind r source-file ~/.tmux.config \; display-message "Config reloaded..."
