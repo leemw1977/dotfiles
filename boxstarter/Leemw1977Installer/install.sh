@@ -46,23 +46,23 @@ main() {
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
-  printf "${BLUE}Cloning leemw1977's dot files...${NORMAL}\n"
-  command -v git >/dev/null 2>&1 || {
-    echo "Error: git is not installed"
-    exit 1
-  }
-  # The Windows (MSYS) Git is not compatible with normal use on cygwin
-  if [ "$OSTYPE" = cygwin ]; then
-    if git --version | grep msysgit > /dev/null; then
-      echo "Error: Windows/MSYS Git is not supported on Cygwin"
-      echo "Error: Make sure the Cygwin git package is installed and is first on the path"
-      exit 1
-    fi
-  fi
-  env git clone --depth=1 https://github.com/leemw1977/dotfiles.git "$INSTALLDIR" || {
-    printf "Error: git clone of leemw-dot-files repo failed\n"
-    exit 1
-  }
+  # printf "${BLUE}Cloning leemw1977's dot files...${NORMAL}\n"
+  # command -v git >/dev/null 2>&1 || {
+  #   echo "Error: git is not installed"
+  #   exit 1
+  # }
+  # # The Windows (MSYS) Git is not compatible with normal use on cygwin
+  # if [ "$OSTYPE" = cygwin ]; then
+  #   if git --version | grep msysgit > /dev/null; then
+  #     echo "Error: Windows/MSYS Git is not supported on Cygwin"
+  #     echo "Error: Make sure the Cygwin git package is installed and is first on the path"
+  #     exit 1
+  #   fi
+  # fi
+  # env git clone --depth=1 https://github.com/leemw1977/dotfiles.git "$INSTALLDIR" || {
+  #   printf "Error: git clone of leemw-dot-files repo failed\n"
+  #   exit 1
+  # }
 
 
   printf "${BLUE}Looking for an existing zsh config...${NORMAL}\n"
@@ -88,18 +88,9 @@ main() {
   
   printf "${BLUE}Using the leemw1977's dot files: creating relevant files from templates${NORMAL}\n"
   cp "$INSTALLDIR"/templates/zshrc.template ~/.zshrc
-  # If we're on WSL reset the SHELL variable as it will always be bash
-  if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
-    # Reset shell
-    printf "${YELLOW}Found we are running on WSL/Microsoft.${NORMAL} ${GREEN}Adding a line that will setup the shell variable to point to zsh as it should be after install.${NORMAL}\n"
-    sed 's/# SHELL=\/dev\/null/\SHELL=\/bin\/zsh/' ~/.zshrc > ~/.zshrc-ldftemp
-    mv -f ~/.zshrc-ldftemp ~/.zshrc
-  fi
 
-  cp "$INSTALLDIR"/templates/tmux.conf.template ~/.tmux.conf
-  cp "$INSTALLDIR"/templates/vimrc.template ~/.vimrc
-
-  
+  cp "$INSTALLDIR"/.tmux.conf ~/.tmux.conf
+  cp "$INSTALLDIR"/.vimrc ~/.vimrc
 
   # If this user's login shell is not already "zsh", attempt to switch.
   TEST_CURRENT_SHELL=$(basename "$SHELL")

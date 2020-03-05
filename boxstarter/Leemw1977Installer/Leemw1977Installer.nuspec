@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Leemw1977Installer</id>
+    <version>1.0.2</version>
+    <authors>leemw</authors>
+    <owners>leemw</owners>
+    <description>Install WSL, vscode, dev envs,etc.</description>
+    <tags>Boxstarter</tags>
+  </metadata>
+</package>
