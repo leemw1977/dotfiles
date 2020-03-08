@@ -13,6 +13,17 @@ In the elevated powershell window run this install:
 
 `choco install boxstarter -y`
 
+Then restart your elevated powershell
+
+## Step 3 - Install boxstarter package:
+Now can clone the repo and then in an elevated powershell prompt in the root of the directory you cloned to execute:
+
+```
+.\install-package.ps1 
+```
+
+It will ask you for your user credentials to ensure it can restart with resilience and continue the install routine.
+
 ## Step 3 - Install the Hack and Cascadia fonts
 Look in the directories on this repo - there may be updates to these fonts so you can always get the latest version from the [Cascadia Code GitHub Repo](https://github.com/microsoft/cascadia-code/releases) and for the `Hack` font which can be found in the [Powerline GitHub Repo](https://github.com/powerline/fonts/tree/master/Hack)
 

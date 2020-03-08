@@ -26,7 +26,8 @@ main() {
 
   if ! command -v zsh >/dev/null 2>&1; then
     printf "${YELLOW}Zsh is not installed!${NORMAL} Please install zsh first!\n"
-    exit
+    sudo apt update && sudo apt install zsh -y
+#    exit
   fi
 
   if [ ! -n "$INSTALLDIR" ]; then
@@ -105,6 +106,14 @@ main() {
       printf "${BLUE}Please manually change your default shell to zsh!${NORMAL}\n"
     fi
   fi
+
+
+
+# TODO - install latest vim and git on linux:
+#sudo add-apt-repository ppa:jonathonf/vim
+#sudo add-apt-repository ppa:git-core/ppa
+#sudo apt update && sudo apt install vim git python3 python3-pip -y
+
 
   printf "${GREEN}"
 
