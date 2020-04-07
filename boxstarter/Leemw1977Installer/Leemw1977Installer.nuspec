@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Leemw1977Installer</id>
+    <version>1.0.3</version>
+    <authors>leemw1977</authors>
+    <owners>leemw1977</owners>
+    <description>Basic new pc setup for development projects</description>
+    <tags>Boxstarter</tags>
+  </metadata>
+</package>
