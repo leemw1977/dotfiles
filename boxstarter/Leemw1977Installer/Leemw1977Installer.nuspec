@@ -3,9 +3,9 @@
   <metadata>
     <id>Leemw1977Installer</id>
     <version>1.0.3</version>
-    <authors>leemw</authors>
-    <owners>leemw</owners>
-    <description>Install WSL, vscode, dev envs,etc.</description>
+    <authors>leemw1977</authors>
+    <owners>leemw1977</owners>
+    <description>Basic new pc setup for development projects</description>
     <tags>Boxstarter</tags>
   </metadata>
 </package>
