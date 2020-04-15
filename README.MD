@@ -36,3 +36,18 @@ Look in the directories on this repo - there may be updates to these fonts so yo
     cinst addnewfile # Mads Kris. Web Essentials
     cinst markdowneditor
     ```
+
+
+## For Ubuntu machines:
+
+### I should install the latest vim and git
+```shell
+sudo add-apt-repository ppa:jonathonf/vim
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update && sudo apt install vim git python3 python3-pip -y
+```
+
+Should I need to downgrade this should do the trick:
+```shell
+sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/vim
+sudo apt install ppa-purge && sudo ppa-purge ppa:git-core/ppa
