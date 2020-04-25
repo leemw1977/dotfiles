@@ -40,15 +40,23 @@ Look in the directories on this repo for the ttf files - there may be updates to
 
 
 ## For Ubuntu machines:
+To setup on ubuntu you can run the basic linux setup script either
 
-### I should install the latest vim and git
+by using wget:
+
 ```shell
-sudo add-apt-repository ppa:jonathonf/vim
-sudo add-apt-repository ppa:git-core/ppa
-sudo apt update && sudo apt install vim git python3 python3-pip -y
+sh -c "$(wget https://raw.githubusercontent.com/leemw1977/dotfiles/master/setup-linux.sh -O -)"
 ```
 
-Should I need to downgrade this should do the trick:
+or 
+
+by using curl:
+
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/leemw1977/dotfiles/master/setup-linux.sh)"
+```
+
+Should I need to remove the PPA's added by the above this should do the trick:
 ```shell
 sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/vim
 sudo apt install ppa-purge && sudo ppa-purge ppa:git-core/ppa
