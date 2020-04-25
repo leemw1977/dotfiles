@@ -43,12 +43,13 @@ autoload -Uz promptinit && promptinit
 prompt clint
 
 # Add Powerline to PATH
-PATH=$PATH:/home/lee/.local/bin
+PATH=$PATH:$HOME/.local/bin
 
 # Add powerline source
-. $HOME/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+. $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
+# Alias
+alias la=ls -la
 
-#
-eval `ssh-agent`
-ssh-add ~/.ssh/id_ed25519wsl
+# Add local .zshalias file
+. $HOME/.zshalias

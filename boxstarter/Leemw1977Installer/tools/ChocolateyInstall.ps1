@@ -9,17 +9,21 @@ try {
 
     # Everyday software
     cinst microsoft-edge -y
-    cinst 7zip
+    cinst 7zip -y
 
     # Editors and IDE
     cinst vscode -y
+    choco install visualstudio2019community -y
     cinst jetbrains-rider -y
     cinst notepadplusplus -y
-    cinst hub -y
-
+    
     # Source control
+    cinst hub -y
     cinst poshgit -y
     cinst git -y
+
+    # Broadcasting
+    cinst obs-studio -y
 
     # Copy setup of dotfiles to a local folder
     $installFolder = 'leemw1977-dot-files'
