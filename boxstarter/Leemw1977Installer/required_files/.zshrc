@@ -31,12 +31,13 @@ PATH=$PATH:$HOME/.local/bin
 # Add powerline source
 . $HOME/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
-# Add TheFork command! 
+# Add TheFork command!
 eval $(thefuck --alias fork)
 
 # Setup python virtual env wrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/src/
+export PROJECT_HOME=$HOME/src
 source $HOME/.local/bin/virtualenvwrapper.sh
 
 # Alias
