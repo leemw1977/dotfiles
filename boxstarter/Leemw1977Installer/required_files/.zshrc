@@ -47,3 +47,9 @@ PATH=$PATH:$HOME/.local/bin
 
 # Add powerline source
 . $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# Alias
+alias la=ls -la
+
+# Add local .zshalias file
+. $HOME/.zshalias
