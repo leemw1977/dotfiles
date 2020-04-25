@@ -29,18 +29,18 @@ bindkey -v
 PATH=$PATH:$HOME/.local/bin
 
 # Add powerline source
-. $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+. $HOME/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Add TheFork command! 
 eval $(thefuck --alias fork)
 
 # Setup python virtual env wrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+export PROJECT_HOME=$HOME/src/
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # Alias
-alias la=ls -la
+alias la="ls -la"
 
 # Add local .zshalias file
 . $HOME/.zshalias
