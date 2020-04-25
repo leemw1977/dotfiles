@@ -14,12 +14,20 @@ add_ppa() {
 
 
 add_ppa jonathonf/vim
-add_ppa ppa:git-core/ppa
+add_ppa git-core/ppa
 sudo apt update 
 sudo apt install vim git python3 python3-pip python3-venv hub zsh -y
 
-pip3 install thefuck virtualenvwrapper
+pip3 install thefuck virtualenvwrapper powerline-status
 
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/leemw1977/dotfiles/master/boxstarter/Leemw1977Installer/required_files/.zshrc
 wget -O $HOME/.tmux.conf https://raw.githubusercontent.com/leemw1977/dotfiles/master/boxstarter/Leemw1977Installer/required_files/.tmux.conf
 wget -O $HOME/.vimrc https://raw.githubusercontent.com/leemw1977/dotfiles/master/boxstarter/Leemw1977Installer/required_files/.vimrc
+
+if [[ -f $HOME/.zshalias ]]
+then
+        echo "$HOME/.zshalias exists on your filesystem and so will not be over-written."
+else
+    echo "Initialiasing user alias file at $HOME/.zshalias."
+    touch $HOME/.zshalias
+fi
