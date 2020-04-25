@@ -11,42 +11,33 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %l
 zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/lee/.zshrc'
 
-autoload -Uz compinit
+autoload -Uz compinit && promptinit
 compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory autocd extendedglob
-unsetopt beep notify
-bindkey -v
-# End of lines configured by zsh-newuser-install
-
-
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory autocd extendedglob
-unsetopt beep notify
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/lee/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-autoload -Uz promptinit && promptinit
 prompt clint
+
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory autocd extendedglob
+unsetopt beep notify
+bindkey -v
+# End of lines configured by zsh-newuser-install
 
 # Add Powerline to PATH
 PATH=$PATH:$HOME/.local/bin
 
 # Add powerline source
 . $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# Add TheFork command! 
+eval $(thefuck --alias fork)
+
+# Setup python virtual env wrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Alias
 alias la=ls -la
