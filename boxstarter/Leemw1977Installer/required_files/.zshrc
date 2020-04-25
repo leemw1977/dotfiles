@@ -11,8 +11,8 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %l
 zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/lee/.zshrc'
 
-autoload -Uz compinit && promptinit
-compinit
+autoload -Uz compinit && compinit
+autoload promptinit && promptinit
 prompt clint
 
 # End of lines added by compinstall
