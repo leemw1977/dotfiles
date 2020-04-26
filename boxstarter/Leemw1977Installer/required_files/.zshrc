@@ -28,8 +28,11 @@ bindkey -v
 # Add Powerline to PATH
 PATH=$PATH:$HOME/.local/bin
 
+# Get powerline folder
+export POWERLINE_INSTALL_FOLDER=$(pip3 show powerline-status | grep -oP "Location: \K.*")
+
 # Add powerline source
-. $HOME/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+. $POWERLINE_INSTALL_FOLDER/powerline/bindings/zsh/powerline.zsh
 
 # Add TheFork command!
 eval $(thefuck --alias fork)
