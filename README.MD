@@ -45,7 +45,7 @@ To setup on ubuntu you can run the basic linux setup script either
 by using wget:
 
 ```shell
-sh -c "$(wget https://raw.githubusercontent.com/leemw1977/dotfiles/master/setup-linux.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/leemw1977/dotfiles/master/setup-ubuntu.sh -O -)"
 ```
 
 or 
@@ -53,7 +53,7 @@ or
 by using curl:
 
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/leemw1977/dotfiles/master/setup-linux.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/leemw1977/dotfiles/master/setup-ubuntu.sh)"
 ```
 
 Should I need to remove the PPA's added by the above this should do the trick:
