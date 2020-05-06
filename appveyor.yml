@@ -1,0 +1,22 @@
+version: 1.0.{build}
+build_cloud: Docker
+image: Windows
+build_script:
+- ps: >-
+    Write-Host "Building..."
+
+    choco install Boxstarter -y
+
+    Invoke-BoxstarterBuild Leemw1977Installer
+artifacts:
+- path: '*.nupkg'
+  name: Nuget Packages
+deploy:
+- provider: NuGet
+  server: http://172.16.0.3:8050/nuget/appveyor-8lbmcx60dq7s
+  api_key:
+    secure: Ti50hmKaE4dNnu/zKuqwQEFo2ppyYVyRzzlVNQTS8X0=
+  skip_symbols: true
+  on:
+    branch: master
+...
