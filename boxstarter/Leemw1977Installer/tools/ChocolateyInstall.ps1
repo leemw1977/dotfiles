@@ -3,17 +3,19 @@ try {
     # Import-Module Boxstarter.Chocolatey
     # Chocolatey pacakges:
 
+
+    # Up first do the windows updates
+    Install-WindowsUpdate -Full -AcceptEula
+
+
     # CLI's
     cinst powershell-core -y
-    cinst microsoft-windows-terminal -y
 
     # Everyday software
-    cinst microsoft-edge -y
     cinst 7zip -y
 
     # Editors and IDE
     cinst vscode -y
-    choco install visualstudio2019community -y
     cinst jetbrains-rider -y
     cinst notepadplusplus -y
     
@@ -47,20 +49,18 @@ try {
       Write-BoxstarterMessage("dot files already exist, remove the directory $fullInstallPath if you want to reinstall from the package.")
     }
 
-    Install-WindowsUpdate -Full -AcceptEula
+    # Troublesome packages go here - these are ones that have caused issues in the past
+    cinst visualstudio2019community -y
+    cinst microsoft-windows-terminal -y
 
-
-    # Set Windows features:
+    # Finally Set Windows features:
     Write-BoxstarterMessage "Setting windows options"
     Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles 
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
     Enable-MicrosoftUpdate
     Enable-RemoteDesktop
 
-    Write-BoxstarterMessage "Installing WSL"
-    Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
-    Add-AppxPackage .\Ubuntu.appx
-
+    
     Write-BoxstarterMessage 'Leemw1977Installer installed successfully'
 } catch {
   Write-BoxstarterMessage 'Leemw1977Installer not installed successfully' $($_.Exception.Message)
