@@ -1,5 +1,2 @@
-Set-ExecutionPolicy Bypass -Scope Process -Force
-Invoke-BoxstarterBuild Leemw1977Installer
-
-$cred=Get-Credential aUser
+$cred=Get-Credential your_user_here
 Install-BoxstarterPackage -PackageName "Leemw1977Installer" -Credential $cred
