@@ -49,10 +49,6 @@ try {
       Write-BoxstarterMessage("dot files already exist, remove the directory $fullInstallPath if you want to reinstall from the package.")
     }
 
-    # Troublesome packages go here - these are ones that have caused issues in the past
-    cinst visualstudio2019community -y
-    cinst microsoft-windows-terminal -y
-
     # Finally Set Windows features:
     Write-BoxstarterMessage "Setting windows options"
     Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles 
