@@ -1,0 +1,9 @@
+version: 1.0.{build}
+nuget:
+  account_feed: true
+build_script:
+- ps: choco pack boxstarter\Leemw1977Installer\Leemw1977Installer.nuspec --version 1.0.{build}
+test: off
+artifacts:
+- path: '**/*.nupkg'
+  name: nuget_package
