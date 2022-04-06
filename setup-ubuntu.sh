@@ -16,8 +16,8 @@ add_ppa() {
 add_ppa jonathonf/vim
 add_ppa git-core/ppa
 
-sudo echo "deb https://apt.enpass.io/ stable main" > /etc/apt/sources.list.d/enpass.list
-sudo wget -O - https://apt.enpass.io/keys/enpass-linux.key | apt-key add -
+#sudo echo "deb https://apt.enpass.io/ stable main" > /etc/apt/sources.list.d/enpass.list
+#sudo wget -O - https://apt.enpass.io/keys/enpass-linux.key | apt-key add -
 
 sudo apt update 
 sudo apt install vim git python3 python3-pip python3-venv hub zsh enpass tmux -y
