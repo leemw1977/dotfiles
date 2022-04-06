@@ -20,7 +20,7 @@ add_ppa git-core/ppa
 #sudo wget -O - https://apt.enpass.io/keys/enpass-linux.key | apt-key add -
 
 sudo apt update 
-sudo apt install vim git python3 python3-pip python3-venv hub zsh enpass tmux -y
+sudo apt install vim git python3 python3-pip python3-venv hub zsh tmux -y
 
 pip3 install thefuck virtualenvwrapper powerline-status powerline-gitstatus
 
